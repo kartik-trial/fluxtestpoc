@@ -13,7 +13,3 @@ spec:
         name: devtron-test12
         namespace: flux-system
       version: '>=4.18.1'
-  values:
-    replicaCount: 2
-    service:
-      type: ClusterIP
