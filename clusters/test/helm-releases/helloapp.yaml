@@ -1,0 +1,17 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: helloapp
+  namespace: default
+spec:
+  interval: 5m
+  chart:
+    spec:
+      valuesFiles:
+        - ./deployment-chart_4-18-0/4.18.1/_4-values.yaml
+      chart: ./deployment-chart_4-18-0/4.18.1
+      sourceRef:
+        kind: GitRepository
+        name: helloapp
+        namespace: flux-system
+      version: '>=4.18.0'
